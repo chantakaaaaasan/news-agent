@@ -1,0 +1,24 @@
+{
+  "feeds": [
+    {"name": "CNN",
+     "url": "http://rss.cnn.com/rss/edition.rss",
+     "max_items": 15},
+    {"name": "BBC",
+     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+     "max_items": 15},
+    {"name": "ロイター",
+     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=ja&gl=JP&ceid=JP:ja",
+     "max_items": 15},
+    {"name": "Bloomberg",
+     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.co.jp&hl=ja&gl=JP&ceid=JP:ja",
+     "max_items": 15},
+    {"name": "福島民友",
+     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:minyu-net.com&hl=ja&gl=JP&ceid=JP:ja",
+     "max_items": 15},
+    {"name": "時事通信",
+     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:jiji.com&hl=ja&gl=JP&ceid=JP:ja",
+     "max_items": 15}
+  ],
+  "max_articles": 12,
+  "timezone_offset_hours": 9
+}

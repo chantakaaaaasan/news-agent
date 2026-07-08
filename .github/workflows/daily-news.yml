@@ -1,0 +1,36 @@
+name: daily-news-digest
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # UTC 22:00 = JST 07:00
+  workflow_dispatch: {}      # 手動実行(デバッグ用)
+
+permissions:
+  contents: write            # state.json のコミット用
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 依存ゼロ(標準ライブラリのみ)なので pip install は不要
+
+      - name: Run digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python -m news_agent.main
+
+      - name: Persist state (dedupe across runs)
+        run: |
+          git config user.name "news-agent-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state.json || true
+          git diff --cached --quiet || git commit -m "chore: update state [skip ci]"
+          git push
