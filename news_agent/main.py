@@ -1,6 +1,6 @@
 """毎朝のニュースダイジェスト・パイプライン。
 
-フロー: 収集 → 既読除外 → Haikuで記事要約 → Sonnetでダイジェスト → Slack通知 → 状態保存
+フロー: 収集 → 既読除外 → Slack通知(記事ごとに独立ブロック) → 状態保存
 使い方:
     python -m news_agent.main               # 本番実行
     python -m news_agent.main --dry-run     # Slackに送らず標準出力に表示
@@ -10,11 +10,10 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import collect, notify, summarize
+from . import collect, notify
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.json"
@@ -96,35 +95,25 @@ def run(dry_run: bool = False, logger=print) -> int:
         logger("[main] 新着なし。通知をスキップして正常終了。")
         save_state(state)
         return 0
-    logger(f"[main] 新着 {len(fresh)}件を要約します")
+    logger(f"[main] 新着 {len(fresh)}件を処理します")
 
-    # 3. 記事ごと要約(Haiku)— 個別失敗は元のdescriptionで代替
+    # 3. RSS説明文をそのまま使用(AI要約スキップ = API呼び出し0)
     items = []
     for a in fresh:
-        try:
-            a.ai_summary = summarize.summarize_article(a.title, a.summary, a.source)
-        except summarize.SummarizeError as e:
-            logger(f"[main] 要約失敗({a.title[:30]}…): {e} — 元の抜粋で代替")
-            a.ai_summary = a.summary[:120]
         items.append({"title": a.title, "url": a.link, "source": a.source,
-                      "summary": a.ai_summary})
-        time.sleep(0.3)  # レート制限への配慮
+                      "summary": a.summary})  # RSS に付属する description をそのまま使う
 
-    # 4. ダイジェスト編集(Sonnet)— 失敗時は機械的整形にフォールバック
-    try:
-        digest = summarize.build_digest(items, date_label)
-    except summarize.SummarizeError as e:
-        logger(f"[main] ダイジェスト生成失敗: {e} — 機械整形にフォールバック")
-        digest = "\n".join(
-            f"• *{i['title']}*({i['source']})\n  {i['summary']}\n  <{i['url']}|記事を読む>"
-            for i in items
-        )
+    # 4. ダイジェストを機械的に組立(dry-run表示用。Slack送信は記事ごとブロックを使う)
+    digest = f"📰 朝のニュース速報 {date_label}\n\n" + "\n".join(
+        f"• *{i['title']}*({i['source']})\n  {i['summary']}\n  <{i['url']}|記事を読む>"
+        for i in items
+    )
 
-    # 5. 通知
+    # 5. 通知(記事ごとに独立したブロックに分けて読みやすくする)
     if dry_run:
         logger("=" * 40 + f"\n[DRY-RUN] {date_label}\n" + digest + "\n" + "=" * 40)
     else:
-        notify.post_to_slack(digest, date_label)
+        notify.post_to_slack(digest, date_label, items=items)
         logger("[main] Slackに送信完了")
 
     # 6. 状態保存(送信成功後のみ — 失敗時は次回再送させる)
