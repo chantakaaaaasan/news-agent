@@ -1,24 +1,16 @@
 {
   "feeds": [
-    {"name": "CNN",
-     "url": "http://rss.cnn.com/rss/edition.rss",
-     "max_items": 15},
-    {"name": "BBC",
-     "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-     "max_items": 15},
-    {"name": "ロイター",
-     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=ja&gl=JP&ceid=JP:ja",
-     "max_items": 15},
-    {"name": "Bloomberg",
-     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.co.jp&hl=ja&gl=JP&ceid=JP:ja",
-     "max_items": 15},
-    {"name": "福島民友",
-     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:minyu-net.com&hl=ja&gl=JP&ceid=JP:ja",
-     "max_items": 15},
-    {"name": "時事通信",
-     "url": "https://news.google.com/rss/search?q=when:24h+allinurl:jiji.com&hl=ja&gl=JP&ceid=JP:ja",
-     "max_items": 15}
+    {"name": "CNN", "url": "http://rss.cnn.com/rss/edition.rss", "max_items": 15},
+    {"name": "BBC", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "max_items": 15},
+    {"name": "ロイター", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
+    {"name": "Bloomberg", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.co.jp&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
+    {"name": "福島民友", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:minyu-net.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
+    {"name": "時事通信", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:jiji.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
+    {"name": "CNBC投資", "url": "https://www.cnbc.com/id/10000664/device/rss/rss.html", "max_items": 10},
+    {"name": "CNBCマーケット", "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html", "max_items": 10},
+    {"name": "地政学", "url": "https://news.google.com/rss/search?q=when:24h+geopolitics+OR+地政学&hl=ja&gl=JP&ceid=JP:ja", "max_items": 10},
+    {"name": "安全保障", "url": "https://news.google.com/rss/search?q=when:24h+安全保障+OR+軍事+OR+外交&hl=ja&gl=JP&ceid=JP:ja", "max_items": 10}
   ],
-  "max_articles": 12,
+  "max_articles": 15,
   "timezone_offset_hours": 9
 }
