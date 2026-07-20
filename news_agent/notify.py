@@ -41,15 +41,34 @@ def build_blocks(digest_text: str, date_label: str) -> list[dict]:
     return blocks
 
 
+def build_blocks_from_items(items: list[dict], date_label: str) -> list[dict]:
+    """記事ごとに独立した section + divider を積み、読みやすく区切る。"""
+    blocks: list[dict] = [{
+        "type": "header",
+        "text": {"type": "plain_text", "text": f"📰 朝のニュース速報 {date_label}", "emoji": True},
+    }]
+    for i in items:
+        text = f"*{i['title']}*({i['source']})\n{i['summary']}\n<{i['url']}|記事を読む>"
+        for chunk in _chunk_text(text):
+            blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": chunk}})
+        blocks.append({"type": "divider"})
+    return blocks
+
+
 def post_to_slack(digest_text: str, date_label: str,
-                  webhook_url: str | None = None) -> None:
+                  webhook_url: str | None = None,
+                  items: list[dict] | None = None) -> None:
     webhook_url = webhook_url or os.environ.get("SLACK_WEBHOOK_URL")
     if not webhook_url:
         raise NotifyError("SLACK_WEBHOOK_URL が未設定です")
 
+    blocks = build_blocks_from_items(items, date_label) if items else build_blocks(digest_text, date_label)
+
     payload = json.dumps({
         "text": f"朝のニュースダイジェスト {date_label}",  # 通知プレビュー用フォールバック
-        "blocks": build_blocks(digest_text, date_label),
+        "blocks": blocks,
+        "unfurl_links": False,  # URL先の画像/リンクプレビューを抑制
+        "unfurl_media": False,
     }).encode("utf-8")
 
     req = urllib.request.Request(
