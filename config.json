@@ -1,16 +1,16 @@
 {
   "feeds": [
-    {"name": "CNN", "url": "http://rss.cnn.com/rss/edition.rss", "max_items": 15},
-    {"name": "BBC", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "max_items": 15},
-    {"name": "ロイター", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
-    {"name": "Bloomberg", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.co.jp&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
+    {"name": "CNN経済", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:cnn.com+%28market+OR+stocks+OR+earnings+OR+economy+OR+trade+OR+tariff%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
+    {"name": "CNN地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:cnn.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
+    {"name": "BBC経済", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "max_items": 8},
+    {"name": "BBC地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bbc.co.uk+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire+OR+tariff%29&hl=en-GB&gl=GB&ceid=GB:en", "max_items": 8},
+    {"name": "ロイター経済", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com+%28market+OR+stocks+OR+earnings+OR+economy+OR+trade+OR+tariff%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
+    {"name": "ロイター地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
+    {"name": "Bloomberg経済", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com+%28market+OR+stocks+OR+earnings+OR+economy+OR+fed+OR+rates%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
+    {"name": "Bloomberg地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+geopolitics+OR+military%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
     {"name": "福島民友", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:minyu-net.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
-    {"name": "時事通信", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:jiji.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
-    {"name": "CNBC投資", "url": "https://www.cnbc.com/id/10000664/device/rss/rss.html", "max_items": 10},
-    {"name": "CNBCマーケット", "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html", "max_items": 10},
-    {"name": "地政学", "url": "https://news.google.com/rss/search?q=when:24h+geopolitics+OR+地政学&hl=ja&gl=JP&ceid=JP:ja", "max_items": 10},
-    {"name": "安全保障", "url": "https://news.google.com/rss/search?q=when:24h+安全保障+OR+軍事+OR+外交&hl=ja&gl=JP&ceid=JP:ja", "max_items": 10}
+    {"name": "時事通信", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:jiji.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15}
   ],
-  "max_articles": 15,
+  "max_articles": 16,
   "timezone_offset_hours": 9
 }
