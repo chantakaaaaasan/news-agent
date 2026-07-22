@@ -2,7 +2,7 @@ name: daily-news-digest
 
 on:
   schedule:
-    - cron: "0 22 * * *"   # UTC 22:00 = JST 07:00
+    - cron: "13 22 * * *"   # UTC 22:13 = JST 07:13
   workflow_dispatch: {}      # 手動実行(デバッグ用)
 
 permissions:
