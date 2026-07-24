@@ -1,16 +1,17 @@
 {
   "feeds": [
-    {"name": "CNN経済", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:cnn.com+%28market+OR+stocks+OR+earnings+OR+economy+OR+trade+OR+tariff%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
-    {"name": "CNN地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:cnn.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
-    {"name": "BBC経済", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "max_items": 8},
-    {"name": "BBC地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bbc.co.uk+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire+OR+tariff%29&hl=en-GB&gl=GB&ceid=GB:en", "max_items": 8},
-    {"name": "ロイター経済", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com+%28market+OR+stocks+OR+earnings+OR+economy+OR+trade+OR+tariff%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
-    {"name": "ロイター地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
-    {"name": "Bloomberg経済", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com+%28market+OR+stocks+OR+earnings+OR+economy+OR+fed+OR+rates%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
-    {"name": "Bloomberg地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+geopolitics+OR+military%29&hl=en-US&gl=US&ceid=US:en", "max_items": 8},
-    {"name": "福島民友", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:minyu-net.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15},
-    {"name": "時事通信", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:jiji.com&hl=ja&gl=JP&ceid=JP:ja", "max_items": 15}
+    {"name": "CNN", "url": "https://news.google.com/rss/search?q=when:48h+allinurl:cnn.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire+OR+market+OR+stocks+OR+earnings+OR+economy+OR+tariff%29&hl=en-US&gl=US&ceid=US:en", "max_items": 10},
+    {"name": "ロイター", "url": "https://news.google.com/rss/search?q=when:48h+allinurl:reuters.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire+OR+market+OR+stocks+OR+earnings+OR+economy+OR+tariff%29&hl=en-US&gl=US&ceid=US:en", "max_items": 10},
+    {"name": "Bloomberg", "url": "https://news.google.com/rss/search?q=when:48h+allinurl:bloomberg.com+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+geopolitics+OR+military+OR+market+OR+stocks+OR+earnings+OR+economy+OR+fed%29&hl=en-US&gl=US&ceid=US:en", "max_items": 10},
+    {"name": "BBC経済", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "max_items": 6},
+    {"name": "BBC地政学", "url": "https://news.google.com/rss/search?q=when:24h+allinurl:bbc.co.uk+%28war+OR+conflict+OR+sanctions+OR+diplomacy+OR+military+OR+ceasefire+OR+tariff%29&hl=en-GB&gl=GB&ceid=GB:en", "max_items": 6},
+    {"name": "Euronews国際情勢", "url": "http://feeds.feedburner.com/euronews/en/home/", "max_items": 8},
+    {"name": "Forbes投資", "url": "https://news.google.com/rss/search?q=when:48h+allinurl:forbes.com+%28market+OR+stocks+OR+investing+OR+earnings+OR+economy%29&hl=en-US&gl=US&ceid=US:en", "max_items": 6},
+    {"name": "Forbes仮想通貨", "url": "https://news.google.com/rss/search?q=when:48h+allinurl:forbes.com+%28crypto+OR+bitcoin+OR+ethereum+OR+blockchain+OR+stablecoin%29&hl=en-US&gl=US&ceid=US:en", "max_items": 6},
+    {"name": "Cointelegraph仮想通貨", "url": "https://cointelegraph.com/rss", "max_items": 6},
+    {"name": "CLARITY法案", "url": "https://news.google.com/rss/search?q=when:7d+%28%22CLARITY+Act%22+OR+%E3%82%AF%E3%83%A9%E3%83%AA%E3%83%86%E3%82%A3%E6%B3%95%E6%A1%88%29+%28crypto+OR+SEC+OR+CFTC+OR+Senate+OR+Congress+OR+%E4%BB%AE%E6%83%B3%E9%80%9A%E8%B2%A8%29&hl=en-US&gl=US&ceid=US:en", "max_items": 6},
+    {"name": "Politico米国内情勢", "url": "https://rss.politico.com/politics-news.xml", "max_items": 8}
   ],
-  "max_articles": 16,
+  "max_articles": 20,
   "timezone_offset_hours": 9
 }
