@@ -11,6 +11,8 @@
     {"name": "Cointelegraph仮想通貨", "url": "https://cointelegraph.com/rss", "max_items": 6},
     {"name": "CLARITY法案", "url": "https://news.google.com/rss/search?q=when:7d+%28%22CLARITY+Act%22+OR+%E3%82%AF%E3%83%A9%E3%83%AA%E3%83%86%E3%82%A3%E6%B3%95%E6%A1%88%29+%28crypto+OR+SEC+OR+CFTC+OR+Senate+OR+Congress+OR+%E4%BB%AE%E6%83%B3%E9%80%9A%E8%B2%A8%29&hl=en-US&gl=US&ceid=US:en", "max_items": 6},
     {"name": "Politico米国内情勢", "url": "https://rss.politico.com/politics-news.xml", "max_items": 8}
+    {"name": "為替・金融政策", "url": "https://news.google.com/rss/search?q=when:48h+%28yen+OR+forex+OR+%22currency+intervention%22+OR+%E7%82%BA%E6%9B%BF+OR+%E4%BB%8B%E5%85%A5+OR+%E5%86%86%E5%AE%89%29+%28BOJ+OR+Fed+OR+%E6%97%A5%E9%8A%80+OR+%E8%B2%A1%E5%8B%99%E7%9C%81%29&hl=ja&gl=JP&ceid=JP:ja", "max_items": 8}
+
   ],
   "max_articles": 20,
   "timezone_offset_hours": 9
